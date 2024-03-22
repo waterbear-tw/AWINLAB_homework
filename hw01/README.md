@@ -51,9 +51,9 @@
 
 ### Output of Testing set (3)
 
-詳如[output.xlsx](/output.xlsx)
+詳如[output.xlsx](/hw01/output.xlsx)
 
-<img src="/hw01/output.jpg" width="550"/>
+<img src="/info/output.jpg" width="550"/>
 
 ---
 
