@@ -118,21 +118,21 @@
        - 公式：$` MSE = \frac{1}{n} \sum\_{i=1}^{n} (y_i - \hat{y}\_i)^2 `$
        - 用於回歸問題，衡量實際值和預測值之間的平均平方差。
     2. **平均絕對誤差（Mean Absolute Error，MAE）:**
-       - 公式：$*MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|*$
+       - 公式：$`MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|`$
        - 也用於回歸問題，衡量實際值和預測值之間的平均絕對差。
     3. **二元交叉熵（Binary Cross-Entropy）:**
-       - 公式：$*BCE = -\frac{1}{n} \sum_{i=1}^{n} [y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i)]*$
-       - 用於二元分類問題，其中$*y_i*$和$*\hat{y}_i*$分別表示實際值和預測值。
+       - 公式：$`BCE = -\frac{1}{n} \sum_{i=1}^{n} [y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i)]`$
+       - 用於二元分類問題，其中$`y_i`$和$`\hat{y}_i`$分別表示實際值和預測值。
     4. **分類交叉熵（Categorical Cross-Entropy）:**
-       - 公式：$*CCE = -\frac{1}{n} \sum_{i=1}^{n} \sum_{j=1}^{m} y_{ij} \log(\hat{y}_{ij})*$
-       - 用於多類別分類問題，其中$*{y}_{ij}*$和$*\hat{y}_{ij}*$分別表示實際和預測的類別概率。
+       - 公式：$`CCE = -\frac{1}{n} \sum_{i=1}^{n} \sum_{j=1}^{m} y_{ij} \log(\hat{y}_{ij})`$
+       - 用於多類別分類問題，其中$`{y}_{ij}`$和$`\hat{y}_{ij}`$分別表示實際和預測的類別概率。
     5. **Hinge Loss:**
        - 主要用於支持向量機（Support Vector Machines，SVM）和一些二元分類問題。
-       - 公式：$HingeLoss = \max(0, 1 - y \cdot \hat{y})$
-       - $y$ 和 $*{\hat y}*$分別表示實際類別和預測的分數。
+       - 公式：$` HingeLoss = \max(0, 1 - y \cdot \hat{y})`$
+       - $y$ 和 $`{\hat y}`$分別表示實際類別和預測的分數。
     6. **Huber Loss:**
        - 具有均方誤差和平均絕對誤差的優點，用於回歸問題。
-       - 公式：$HuberLoss = \begin{cases} \frac{1}{2}(y - \hat{y})^2, & \text{if } |y - \hat{y}| \leq \delta \\ \delta(|y - \hat{y}| - \frac{1}{2}\delta), & \text{otherwise} \end{cases}$
+       - 公式：$` HuberLoss = \begin{cases} \frac{1}{2}(y - \hat{y})^2, & \text{if } |y - \hat{y}| \leq \delta \\ \delta(|y - \hat{y}| - \frac{1}{2}\delta), & \text{otherwise} \end{cases} `$
        - $\delta$ 是一個超參數，用於控制平方誤差和絕對誤差的過渡。
 
 - **目標函數(Object Function)**
