@@ -31,7 +31,7 @@
 
 ### 結果
 
-<img src="/info/HC.png" width="400"/>
+<img src="/info/HC.png" width="550"/>
 
 ---
 
@@ -70,4 +70,4 @@
 
 ### 結果
 
-<img src="/info/GA.png" width="400"/>
+<img src="/info/GA.png" width="550"/>
