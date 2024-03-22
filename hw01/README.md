@@ -46,8 +46,8 @@
 
 ### Model Accuracy(2-乙)
 
-<img src="/info/accuracy.png" width="550"/>
-<img src="/info/loss.png" width="550"/>
+<img src="/info/accuracy.jpg" width="550"/>
+<img src="/info/loss.jpg" width="550"/>
 
 ### Output of Testing set (3)
 
