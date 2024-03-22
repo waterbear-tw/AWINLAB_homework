@@ -115,7 +115,7 @@
 
   - 常用的誤差函數：
     1. **均方誤差（Mean Squared Error，MSE）:**
-       - 公式：$\ MSE = \frac{1}{n} \sum\_{i=1}^{n} (y_i - \hat{y}\_i)^2 \$
+       - 公式：$` MSE = \frac{1}{n} \sum\_{i=1}^{n} (y_i - \hat{y}\_i)^2 `$
        - 用於回歸問題，衡量實際值和預測值之間的平均平方差。
     2. **平均絕對誤差（Mean Absolute Error，MAE）:**
        - 公式：$*MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|*$
