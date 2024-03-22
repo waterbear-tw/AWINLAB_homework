@@ -31,7 +31,7 @@
 
 ### 結果
 
-![HC_result](/info/HC.png)
+<img src="/info/HC.png" width="900"/>
 
 ---
 
@@ -70,4 +70,4 @@
 
 ### 結果
 
-![GA_result](/info/GA.png)
+<img src="/info/GA.png" width="900"/>
