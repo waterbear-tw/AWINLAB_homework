@@ -41,8 +41,7 @@
 
 ### Model Accuracy(2-乙)
 
-![Accuracy](/info/Accuracy.png)
-
+<img src="/info/Accuracy.png" width="200"/>
 ### Output of Testing set (3)
 
 詳如[output.xlsx](/output.xlsx)
