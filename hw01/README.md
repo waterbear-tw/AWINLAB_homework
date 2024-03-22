@@ -41,7 +41,7 @@
 
 ### Model Accuracy(2-乙)
 
-![Accuracy](/info/Figure_1.png)
+![Accuracy](/info/Accuracy.png)
 
 ### Output of Testing set (3)
 
@@ -51,7 +51,9 @@
 
 ---
 
-## 過程中的學習筆記
+(以下為筆記)
+
+# 過程中的學習筆記
 
 ### 深度學習的函數類型
 
