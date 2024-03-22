@@ -111,10 +111,25 @@ val_accuracy = history.history["val_accuracy"]
 
 epoch_count = range(1, len(val_accuracy) + 1)
 
-plt.plot(epoch_count, accuracy, "b--", label = "Accuracy")
-plt.plot(epoch_count, val_accuracy, "r--",  label = "Valid Accuracy")
+# Accuracy
+plt.plot(epoch_count, accuracy, "b--", label = "Training Accuracy")
+plt.plot(epoch_count, val_accuracy, "r--",  label = "Validation Accuracy")
 plt.xlabel("Epoch")
-plt.ylabel("accuracy")
+plt.ylabel("Accuracy")
+plt.legend(loc='lower right')
+plt.title('Accuracy',size='23')
+plt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)
+plt.show();
+
+
+# loss
+plt.plot(epoch_count, loss, "b--", label = "Training Loss")
+plt.plot(epoch_count, val_loss, "r--",  label = "Validation Loss")
+plt.xlabel('Epochs');
+plt.ylabel('Loss')
+plt.legend(loc='upper right')
+plt.title('Loss',size='23')
+plt.grid(color = 'gray', linestyle = '--', linewidth = 0.5)
 plt.show();
 
 # 載入模組，對測試集進行預測（因一條龍式執行時間過久，難以debug，故以載入方式進行）
