@@ -15,6 +15,7 @@
 ### 資料前處理
 
 採用 Kreas.preprocessing.image.ImageDataGenerator 類別進行，其將輸入之圖片生成一個張量 tensor，包含代表平面的二維像素點，以及代表色彩通道 RGB 的三個維度（若為黑白則只需一個維度）。
+
 採用(224, 224, 3)作為 inputs 大小
 
 ---
@@ -23,7 +24,10 @@
 
 #### 使用 ResNet50：
 
-在搭建自己的 CNN 時發現效能總是不佳，Accuracy 時常落於 10%左右；最終選擇 ResNet50 作為神經網路架構，得到 97%左右的 Accuray。
+在搭建自己的 CNN 時發現效能總是不佳，Accuracy 時常落於 10%左右；
+
+最終選擇 ResNet50 作為神經網路架構，得到 97%左右的 Accuray。
+
 原先使用架構如下：
 
 > Conv2D → MaxPool2d → Conv2D → MaxPool2d → Conv2D → Conv2D → Conv2D → MaxPool2d → Dense → Dense → Dense
@@ -42,7 +46,8 @@
 
 ### Model Accuracy(2-乙)
 
-<img src="/info/Accuracy.png" width="550"/>
+<img src="/info/accuracy.png" width="550"/>
+<img src="/info/loss.png" width="550"/>
 
 ### Output of Testing set (3)
 
@@ -61,15 +66,25 @@
 組合函數(combination function)、啟動函數(activation function/激勵函數)、誤差函數(error function)、目標函數(object function)
 
 - **組合函數(Combination Funtion)**
+
   將上一層的輸出作為輸入，經過自身函數後會給予輸出，當函數作為神經網路中其中一層，作為向量映射功能時，就稱為組合函數。
+
 - **啟動/激勵函數(Activation Function)**
+
   激勵函數的作用是，藉由引入一個非線性函數，使得神經網路預測能力提升。
   對於**反向傳播演算法(Backpropagation Algorithm)**而言，激勵函數必須可微，符合條件的函數被稱**為 Sigmoid Function**。
+
   > **Sigmoid v.s. Threshold**
   > 以往認為若使用 Threshold 函數，其誤差函數會是逐級函數(Stepwise Constant)，其一階導數為 0 或者不存在，則無法計算反向傳導演算法之一階梯度(Gradiant)，故以前認為 Sigmoid 較佳，連續可微之特性使得參數調整後，輸出變化幅度大，可以快速收斂；若用 Threshold 則參數變化造成之影響細微，收斂較慢。
   > 然而 1991 Sepp Hochreiter 發現 Sigmoid 具有梯度消失問題(Gradiant Vanishing)，因為 Sigmoid 之值域在(-1,1)或者(0,1)，當許多在此域內的值連續相乘後，第 n 層的梯度將趨近於 0。
   > Threshold 則因為值域範圍無此特性，故沒有梯度消失問題。
-- 常用之激勵函數： - **Sigmoid 函數（Logistic 函數）:** - **適用範圍：** 主要用於二元分類問題（雙值因變數）的輸出層。 - **特點：** 輸出範圍在 0 到 1 之間，可以將輸出解釋為概率。
+
+- 常用之激勵函數：
+
+  - **Sigmoid 函數（Logistic 函數）:**
+
+    - **適用範圍：** 主要用於二元分類問題（雙值因變數）的輸出層。
+    - **特點：** 輸出範圍在 0 到 1 之間，可以將輸出解釋為概率。
 
   - **Softmax 函數:**
 
@@ -92,8 +107,12 @@
   激勵函數可以理解為統計學中，廣義線性模型之連結函數(Link Funtion)。
 
 - **誤差函數/損失函數(Error Function)**
-  監督式學習中，需要一個函數去測量預測模型之輸出與實際清況之間的差異；有些非監督式學習也需要類似功能的函數。完美的模型誤差=0，偏離 0 之數值越小越好，意即誤差值越趨近於零，預測模型效能越好。
+  監督式學習中，需要一個函數去測量預測模型之輸出與實際清況之間的差異；有些非監督式學習也需要類似功能的函數。
+
+  完美的模型誤差=0，偏離 0 之數值越小越好，意即誤差值越趨近於零，預測模型效能越好。
+
   交叉熵可以解釋為：映射到最可能屬於之類別的 對數，因此當實際分不等同於預測分佈時，交叉熵最小。
+
   - 常用的誤差函數：
     1. **均方誤差（Mean Squared Error，MSE）:**
        - 公式：$*MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2*$
@@ -115,9 +134,12 @@
        - 具有均方誤差和平均絕對誤差的優點，用於回歸問題。
        - 公式：$HuberLoss = \begin{cases} \frac{1}{2}(y - \hat{y})^2, & \text{if } |y - \hat{y}| \leq \delta \\ \delta(|y - \hat{y}| - \frac{1}{2}\delta), & \text{otherwise} \end{cases}$
        - $\delta$ 是一個超參數，用於控制平方誤差和絕對誤差的過渡。
+
 - **目標函數(Object Function)**
   最佳化理論中，我們欲對其進行最大化或者最小化的那個函數；當我們在 train 一個 model，就是希望讓 Object Function 有最佳的效能表現。
+
   模型普適化差：
+
   Model 在訓練集可以達到一定的準確度，但在真實使用時不行的狀況稱之。此時會採用正規化規範模型，減少過度擬合的情況。這種狀況的 Object Function 會是 Loss Function 以及正規函數的加成。
 
 ### 其他概念
