@@ -53,7 +53,7 @@
 
 詳如[output.xlsx](/output.xlsx)
 
-<img src="/info/output.jpg" width="550"/>
+<img src="/hw01/output.jpg" width="550"/>
 
 ---
 
