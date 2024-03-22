@@ -28,6 +28,7 @@
 
 > Conv2D → MaxPool2d → Conv2D → MaxPool2d → Conv2D → Conv2D → Conv2D → MaxPool2d → Dense → Dense → Dense
 > 也就是試著重現 AlexNet
+
 > <img src="/info/alexnet.png" width="550"/>
 
 #### Compiling setting
@@ -42,6 +43,7 @@
 ### Model Accuracy(2-乙)
 
 <img src="/info/Accuracy.png" width="550"/>
+
 ### Output of Testing set (3)
 
 詳如[output.xlsx](/output.xlsx)
